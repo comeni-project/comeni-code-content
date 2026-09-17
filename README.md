@@ -11,8 +11,15 @@ Until then this repository holds only its licence.
 - **From Comeni Code's Studio.** A node is drafted, checked and approved in Studio; landing opens
   a pull request here with its provenance, CI validates it, and it merges automatically when the
   checks pass. Review happens in Studio, not twice.
-- **From anyone, by pull request.** Pull requests that do not come from Studio need a
-  maintainer's review, and are recorded as reviewed on GitHub.
+- **From anyone, by pull request.** Pull requests that do not come from Studio will need a
+  maintainer's review, recorded on GitHub. That rule arrives with landing (Comeni Code M4).
+
+**`main` takes pull requests only, for everyone, maintainers included.** Each must pass the
+`validate` check and is squash-merged, so one landing batch is one commit. The rules are in
+[`.github/rulesets/main.json`](.github/rulesets/main.json).
+
+**What `validate` checks today:** the licence and README are present, every YAML file parses, and
+no file is larger than 5 MB. Node validation arrives with Comeni Code's M1 phase.
 
 Comeni Code follows this repository's `main` branch and rebuilds its index on every merge.
 Tagged releases are citable snapshots.
