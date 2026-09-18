@@ -4,8 +4,9 @@
 # ///
 """The `validate` check for comeni-code-content (Comeni Code, M0 part 9 spec).
 
-Until the node format exists (Comeni Code M1), it checks only what already has rules: the licence
-and README are present, every YAML file parses, and no file is larger than 5 MB.
+It checks the repository itself: the licence and README are present, every YAML file parses, and
+no file is larger than 5 MB. The node format is checked by the workflow's next step, Comeni Code's
+`code-schema validate`, pinned to a commit.
 Run from the repository root: uv run .github/scripts/validate.py
 """
 
@@ -57,7 +58,7 @@ def main() -> int:
     if found:
         return 1
     print(f"ok: licence, README, YAML and sizes across {len(files)} files")
-    print("Node validation arrives with Comeni Code M1; this check does not validate nodes yet.")
+    print("Nodes are checked by the next step, Comeni Code's `code-schema validate`.")
     return 0
 
 
