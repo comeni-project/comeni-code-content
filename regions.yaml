@@ -1,0 +1,17 @@
+# The regions a node may belong to. A node's `region` must be one of these ids.
+# Adding one is a pull request: a region appears on learners' search facets and orders routes.
+# The first list follows what understanding Salmon depends on (Comeni Code,
+# docs/notes/research/2026-09-18-salmon-dependencies.md), from biology up.
+regions:
+  - id: molecular-biology
+    name: Molecular biology
+  - id: sequencing
+    name: Sequencing
+  - id: sequence-analysis
+    name: Sequence analysis
+  - id: algorithms
+    name: Algorithms
+  - id: statistics
+    name: Statistics
+  - id: transcriptomics
+    name: Transcriptomics
