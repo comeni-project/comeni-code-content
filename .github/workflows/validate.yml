@@ -27,5 +27,5 @@ jobs:
       # pull request of its own, so this repository's CI proves the content passes the newer rules.
       - name: Validate nodes
         run: >
-          uvx --from "git+https://github.com/comeni-project/Comeni-Code@559cbf4ff5fc7f27998c2ee2a6bfdf2796652b84#subdirectory=packages/code-schema"
+          uvx --from "git+https://github.com/comeni-project/Comeni-Code@38d09dcc174c435e007fcfe3ea845a2cbdb2c27e#subdirectory=packages/code-schema"
           code-schema validate . --format github
