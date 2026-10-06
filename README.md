@@ -15,7 +15,8 @@ request; the region registry, [`regions.yaml`](regions.yaml), is the only conten
   maintainer's, needs a maintainer's approval on GitHub. The `review` check says which
   ([`.github/scripts/review.py`](.github/scripts/review.py)); maintainers are listed in
   [`MAINTAINERS`](MAINTAINERS), and Studio's app in [`.github/studio-app`](.github/studio-app),
-  both read from `main`.
+  both read from `main`. Adding a maintainer is a pull request that adds their GitHub login to
+  `MAINTAINERS`, reviewed like any other.
 
 **`main` takes pull requests only, for everyone, maintainers included.** Each must pass the
 `validate` and `review` checks and is squash-merged, so one landing batch is one commit. The rules are in
