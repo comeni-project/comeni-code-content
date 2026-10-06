@@ -1,0 +1,36 @@
+name: review
+
+# Decides the `review` status (Comeni Code's M4.6 spec, M4L.6). pull_request_target runs main's
+# copy of this workflow, never the pull request's, and the job checks out main only: a pull
+# request cannot edit the check that judges it. The ruleset requires the status `review`.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: the pull request's number
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  decide:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+
+      - name: Decide review
+        run: uv run .github/scripts/review.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr }}

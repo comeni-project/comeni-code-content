@@ -1,0 +1,21 @@
+name: review-again
+
+# When a review is submitted or dismissed, decide `review` again, from main's workflow. A fork's
+# token cannot dispatch; a maintainer re-runs review.yml by hand there.
+
+on:
+  pull_request_review:
+    types: [submitted, dismissed]
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide review again
+        run: gh workflow run review.yml --repo "$GITHUB_REPOSITORY" --ref main -f pr="$PR"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}

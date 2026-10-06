@@ -11,11 +11,14 @@ request; the region registry, [`regions.yaml`](regions.yaml), is the only conten
 - **From Comeni Code's Studio.** A node is drafted, checked and approved in Studio; landing opens
   a pull request here with its provenance, CI validates it, and it merges automatically when the
   checks pass. Review happens in Studio, not twice.
-- **From anyone, by pull request.** Pull requests that do not come from Studio will need a
-  maintainer's review, recorded on GitHub. That rule arrives with landing (Comeni Code M4).
+- **From anyone, by pull request.** A pull request that does not come from Studio, and is not a
+  maintainer's, needs a maintainer's approval on GitHub. The `review` check says which
+  ([`.github/scripts/review.py`](.github/scripts/review.py)); maintainers are listed in
+  [`MAINTAINERS`](MAINTAINERS), and Studio's app in [`.github/studio-app`](.github/studio-app),
+  both read from `main`.
 
 **`main` takes pull requests only, for everyone, maintainers included.** Each must pass the
-`validate` check and is squash-merged, so one landing batch is one commit. The rules are in
+`validate` and `review` checks and is squash-merged, so one landing batch is one commit. The rules are in
 [`.github/rulesets/main.json`](.github/rulesets/main.json).
 
 **What `validate` checks:**
