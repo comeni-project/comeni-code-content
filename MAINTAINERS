@@ -1,0 +1,3 @@
+# One GitHub login per line. A maintainer's pull request passes `review`; anyone else's needs a
+# maintainer's approval (Comeni Code's M4.6 spec, M4L.6). Read from main, never from a pull request.
+rafaelmdc
