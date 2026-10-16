@@ -4,7 +4,8 @@
 topic pages ("nodes") that Code weaves into routes, their figure data and their problems.
 
 **Status: no nodes yet.** The node format is defined (Comeni Code M1) and checked on every pull
-request; the region registry, [`regions.yaml`](regions.yaml), is the only content so far.
+request; the registries are the only content so far: regions in [`regions.yaml`](regions.yaml),
+and the providers a resource may come from, with their licences, in [`providers.yaml`](providers.yaml).
 
 ## How content arrives
 
