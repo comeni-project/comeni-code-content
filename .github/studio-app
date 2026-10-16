@@ -1,2 +1,3 @@
-# The Studio GitHub App's bot login, e.g. comeni-code-studio[bot]; empty until it is registered
-# (Comeni Code's M4.9). Read from main, never from a pull request.
+# The Studio GitHub App's bot login (Comeni Code's M4.9): its pull requests pass `review`.
+# Read from main, never from a pull request.
+comeni-code-studio[bot]
