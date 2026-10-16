@@ -1,0 +1,17 @@
+# The providers a resource may come from. A resource's `provider` must be one of these ids, and its
+# licence one of the provider's. Adding a provider is a pull request.
+# `embed` says whether Code may embed the provider's material on a node page; otherwise it is linked.
+# Khan Academy is linked, never embedded (Comeni Code, issue #76).
+providers:
+  - id: khan-academy
+    name: Khan Academy
+    licences: [Khan Academy terms]
+    embed: false
+  - id: openstax
+    name: OpenStax
+    licences: [CC BY 4.0]
+    embed: true
+  - id: galaxy-training
+    name: Galaxy Training
+    licences: [CC BY 4.0]
+    embed: true
